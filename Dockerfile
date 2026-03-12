@@ -16,9 +16,9 @@ RUN dotnet restore src/WebApp/WebApp.csproj --disable-parallel
 
 # Copy remaining source code (after restore) for build
 COPY src ./src
-COPY *.slnx .  # copy solution file
-COPY Directory.Build.props .  # if exists
-COPY Directory.Build.targets .  # if exists
+COPY *.slnx . 
+COPY Directory.Build.props .  
+COPY Directory.Build.targets .
 
 # Build and publish WebApp
 RUN dotnet publish src/WebApp/WebApp.csproj -c Release -o /app/out
